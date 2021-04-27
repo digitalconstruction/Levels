@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A vocabulary for LOD levels</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "https://w3id.org/digitalconstruction/0.5/Levels",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>A vocabulary for LOD levels</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "A vocabulary for LOD levels"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.8.5</span>
+  </div>
+  <h1>A vocabulary for LOD levels</h1>
+<section id="metadata">
+    <h2 style="display:none;">Metadata</h2>
+    <dl>
+        <dt>URI</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Levels</code></dd>
+        <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">Creator</a>(s)</dt>
+        <dd>
+            Janakiram Karlapudi (janakiram.karlapudi@tu-dresden.de)<br/>
+            Prathap Valluru (prathap.valluru@tu-dresden.de)<br/>
+        </dd>
+        <dt>Version Information</dt>
+        <dd>0.5</dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle/lifecycle.ttl">https://w3id.org/digitalconstruction/0.5/Lifecycle/lifecycle.ttl</a><br/>
+        </dd>
+        <dt>Ontology RDF</dt>
+        <dd><a href="levels.ttl">RDF (turtle)</a></dd>
+    </dl>
+    <h2>Description</h2>
+    <div id="description">
+        <p>A vocabulary for LOD levels</p>
+    </div>
+</section>
+<section id="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#annotationproperties">Annotation Properties</a></li>
+        <li><a href="#namedindividuals">Named Individuals</a></li>
+        <li><a href="#namespaces">Namespaces</a></li>
+        <li><a href="#legend">Legend</a></li>
+    </ol>
+</section>
+<section id="overview">
+    <h2>Overview</h2>
+    <div class="figure">
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
+    </div>
+</section>
+  <section id="classes">
+    <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+    </ul>
+</section>
+<section id="annotationproperties">
+    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#creator">creator</a></li>
+        <li><a href="#date">date</a></li>
+        <li><a href="#description">description</a></li>
+        <li><a href="#title">title</a></li>
+    </ul>
+    <div class="entity property" id="creator">
+        <h3>creator<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/creator</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="date">
+        <h3>date<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/date</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="description">
+        <h3>description<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/description</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="title">
+        <h3>title<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td><code>http://purl.org/dc/terms/title</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  
+  <section id="namedindividuals">
+    <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#AsBuilt">AsBuilt</a></li>
+        <li><a href="#AsDesigned">AsDesigned</a></li>
+        <li><a href="#ItalyLevelofDevelopment">Italy Level of Development</a></li>
+        <li><a href="#LOD1">LOD 1</a></li>
+        <li><a href="#LOD100">LOD 100</a></li>
+        <li><a href="#LOD2">LOD 2</a></li>
+        <li><a href="#LOD200">LOD 200</a></li>
+        <li><a href="#LOD3">LOD 3</a></li>
+        <li><a href="#LOD300">LOD 300</a></li>
+        <li><a href="#LOD350">LOD 350</a></li>
+        <li><a href="#LOD4">LOD 4</a></li>
+        <li><a href="#LOD400">LOD 400</a></li>
+        <li><a href="#LOD5">LOD 5</a></li>
+        <li><a href="#LOD500">LOD 500</a></li>
+        <li><a href="#LOG-GeometricalObject">LOG - Geometrical Object</a></li>
+        <li><a href="#LOGA">LOG A</a></li>
+        <li><a href="#LOGB">LOG B</a></li>
+        <li><a href="#LOGC">LOG C</a></li>
+        <li><a href="#LOGD">LOG D</a></li>
+        <li><a href="#LOGE">LOG E</a></li>
+        <li><a href="#LOGF">LOG F</a></li>
+        <li><a href="#LOGG">LOG G</a></li>
+        <li><a href="#LOI-InformationObject">LOI - Information Object</a></li>
+        <li><a href="#LOI1">LOI 1</a></li>
+        <li><a href="#LOI2">LOI 2</a></li>
+        <li><a href="#LOI3">LOI 3</a></li>
+        <li><a href="#LOI4">LOI 4</a></li>
+        <li><a href="#LOI5">LOI 5</a></li>
+        <li><a href="#LOIA">LOI A</a></li>
+        <li><a href="#LOIB">LOI B</a></li>
+        <li><a href="#LOIC">LOI C</a></li>
+        <li><a href="#LOID">LOI D</a></li>
+        <li><a href="#LOIE">LOI E</a></li>
+        <li><a href="#LOIF">LOI F</a></li>
+        <li><a href="#LOIG">LOI G</a></li>
+        <li><a href="#LevelofDetail">Level of Detail</a></li>
+        <li><a href="#LevelofInformation">Level of Information</a></li>
+        <li><a href="#UKLevelofDefinition">UK Level of Definition</a></li>
+        <li><a href="#USABIMForum">USA BIMForum</a></li>
+    </ul>
+    <div class="entity named_individual" id="AsBuilt">
+        <h3>AsBuilt<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#AsBuilt
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="AsDesigned">
+        <h3>AsDesigned<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#AsDesigned
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="ItalyLevelofDevelopment">
+        <h3>Italy Level of Development<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#Italy_Level_of_Development
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LOD_Framework">dicl:LOD_Framework</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD1">
+        <h3>LOD 1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD100">
+        <h3>LOD 100<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_100
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD2">
+        <h3>LOD 2<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_2
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD200">
+        <h3>LOD 200<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_200
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD3">
+        <h3>LOD 3<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_3
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD300">
+        <h3>LOD 300<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_300
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD350">
+        <h3>LOD 350<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_350
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD4">
+        <h3>LOD 4<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_4
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD400">
+        <h3>LOD 400<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_400
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD5">
+        <h3>LOD 5<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_5
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOD500">
+        <h3>LOD 500<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOD_500
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGA">
+        <h3>LOG A<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_A
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGB">
+        <h3>LOG B<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_B
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGC">
+        <h3>LOG C<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_C
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGD">
+        <h3>LOG D<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_D
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGE">
+        <h3>LOG E<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_E
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGF">
+        <h3>LOG F<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_F
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOGG">
+        <h3>LOG G<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_G
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOG-GeometricalObject">
+        <h3>LOG - Geometrical Object<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOG_Geometrical_Object
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI1">
+        <h3>LOI 1<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_1
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI2">
+        <h3>LOI 2<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_2
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI3">
+        <h3>LOI 3<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_3
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI4">
+        <h3>LOI 4<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_4
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI5">
+        <h3>LOI 5<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_5
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIA">
+        <h3>LOI A<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_A
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIB">
+        <h3>LOI B<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_B
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIC">
+        <h3>LOI C<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_C
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOID">
+        <h3>LOI D<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_D
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIE">
+        <h3>LOI E<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_E
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIF">
+        <h3>LOI F<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_F
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOIG">
+        <h3>LOI G<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_G
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LOI-InformationObject">
+        <h3>LOI - Information Object<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#LOI_Information_Object
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LevelofDetail">
+        <h3>Level of Detail<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#Level_of_Detail
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="LevelofInformation">
+        <h3>Level of Information<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#Level_of_Information
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LODLevel">dicl:LODLevel</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="UKLevelofDefinition">
+        <h3>UK Level of Definition<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#UK_Level_of_Definition
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LOD_Framework">dicl:LOD_Framework</a><br/>
+            </dd>
+        </table>
+    </div>
+    <div class="entity named_individual" id="USABIMForum">
+        <h3>USA BIMForum<sup title="named individual" class="sup-ni">ni</sup></h3>
+        <table>
+            <tr>
+                <th>URI</th>
+                <td>
+                  <code>
+                      https://w3id.org/digitalconstruction/0.5/Levels#USA_BIMForum
+                  
+                  </code>
+                </td>
+            </tr>
+            <dt>Classes(s)</dt>
+            <dd>
+                <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#LOD_Framework">dicl:LOD_Framework</a><br/>
+            </dd>
+        </table>
+    </div>
+</section>
+  
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt>:</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Levels#</code></dd>
+        <dt>dicl</dt>
+        <dd><code>https://w3id.org/digitalconstruction/0.5/Lifecycle#</code></dd>
+        <dt>obda</dt>
+        <dd><code>https://w3id.org/obda/vocabulary#</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>prov</dt>
+        <dd><code>http://www.w3.org/ns/prov#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>terms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
+</body>
+</html>
